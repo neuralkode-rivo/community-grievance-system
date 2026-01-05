@@ -1,79 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Add Grievance</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Grievance Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
 
 <div class="container mt-4">
-  <h4>Grievance Form</h4>
+  <h4>Grievance Entry Form</h4>
 
   <form id="grievanceForm">
     <div class="row">
-      <div class="col-md-6 mb-2">
-        <label>Date Reported</label>
-        <input type="date" class="form-control" id="date_reported" required>
+
+      <div class="col-md-4 mb-2">
+        <label>Date Raised</label>
+        <input type="date" class="form-control" id="date" required>
       </div>
 
-      <div class="col-md-6 mb-2">
-        <label>Community</label>
-        <input type="text" class="form-control" id="community" required>
+      <div class="col-md-4 mb-2">
+        <label>Receiver</label>
+        <input class="form-control" id="receiver">
       </div>
 
-      <div class="col-md-6 mb-2">
-        <label>LLG</label>
-        <input type="text" class="form-control" id="llg">
+      <div class="col-md-4 mb-2">
+        <label>Channel</label>
+        <select class="form-control" id="channel">
+          <option>e-mail</option>
+          <option>phone</option>
+          <option>in person</option>
+        </select>
       </div>
 
-      <div class="col-md-6 mb-2">
-        <label>Complainant Name</label>
-        <input type="text" class="form-control" id="complainant_name">
+      <div class="col-md-4 mb-2">
+        <label>Location</label>
+        <input class="form-control" id="location">
       </div>
 
-      <div class="col-md-6 mb-2">
-        <label>Contact Details</label>
-        <input type="text" class="form-control" id="contact_details">
-      </div>
-
-      <div class="col-md-6 mb-2">
-        <label>Receiver of Issue</label>
-        <input type="text" class="form-control" id="receiver">
-      </div>
-
-      <div class="col-md-12 mb-2">
-        <label>Description of Concern</label>
+      <div class="col-md-8 mb-2">
+        <label>Description</label>
         <textarea class="form-control" id="description"></textarea>
       </div>
 
-      <div class="col-md-4 mb-2">
-        <label>Source</label>
-        <select class="form-control" id="source">
-          <option>Online</option>
-          <option>Offline</option>
-          <option>Email</option>
+      <div class="col-md-6 mb-2">
+        <label>Category</label>
+        <select class="form-control" id="category">
+          <option>Compensation & Payments</option>
+          <option>Land</option>
+          <option>Environmental</option>
+          <option>Social</option>
+          <option>Accidents</option>
+          <option>Code of Conduct</option>
+          <option>Safety & Security</option>
+          <option>Recruitment & Labour</option>
+          <option>Human Rights violation</option>
+          <option>Misinformation or lack of information</option>
+          <option>Business opportunities</option>
+          <option>Community investments</option>
+          <option>Others</option>
         </select>
       </div>
 
-      <div class="col-md-4 mb-2">
-        <label>Severity</label>
-        <select class="form-control" id="severity">
-          <option>Low</option>
-          <option>Medium</option>
-          <option>High</option>
+      <div class="col-md-6 mb-2">
+        <label>Criticality</label>
+        <select class="form-control" id="criticality">
+          <option>Level 1</option>
+          <option>Level 2</option>
+          <option>Level 3</option>
         </select>
       </div>
 
-      <div class="col-md-4 mb-2">
+      <div class="col-md-6 mb-2">
+        <label>Assigned To</label>
+        <input class="form-control" id="assigned">
+      </div>
+
+      <div class="col-md-6 mb-2">
         <label>Status</label>
         <select class="form-control" id="status">
-          <option>New</option>
+          <option>Open</option>
           <option>Under Review</option>
-          <option>Resolved</option>
           <option>Closed</option>
         </select>
       </div>
+
+      <div class="col-md-12 mb-2">
+        <label>Update</label>
+        <textarea class="form-control" id="update"></textarea>
+      </div>
+
     </div>
 
     <button class="btn btn-success mt-3">Save</button>
