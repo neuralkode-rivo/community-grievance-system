@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Add Grievance</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>Grievance Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
 
-<div class="container mt-4 mb-5">
+<div class="container mt-4">
   <h4>Grievance Entry Form</h4>
 
   <form id="grievanceForm">
@@ -21,7 +19,7 @@
 
       <div class="col-md-4 mb-2">
         <label>Receiver</label>
-        <input type="text" class="form-control" id="receiver" required>
+        <input class="form-control" id="receiver">
       </div>
 
       <div class="col-md-4 mb-2">
@@ -35,12 +33,12 @@
 
       <div class="col-md-4 mb-2">
         <label>Location</label>
-        <input type="text" class="form-control" id="location" required>
+        <input class="form-control" id="location">
       </div>
 
       <div class="col-md-8 mb-2">
         <label>Description</label>
-        <textarea class="form-control" id="description" required></textarea>
+        <textarea class="form-control" id="description"></textarea>
       </div>
 
       <div class="col-md-6 mb-2">
@@ -73,7 +71,7 @@
 
       <div class="col-md-6 mb-2">
         <label>Assigned To</label>
-        <input type="text" class="form-control" id="assigned">
+        <input class="form-control" id="assigned">
       </div>
 
       <div class="col-md-6 mb-2">
@@ -86,7 +84,7 @@
       </div>
 
       <div class="col-md-12 mb-2">
-        <label>Update / Notes</label>
+        <label>Update</label>
         <textarea class="form-control" id="update"></textarea>
       </div>
 
