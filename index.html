@@ -1,30 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Community Grievance Register</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Grievance Register</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
 
 <div class="container mt-4">
-  <h3 class="mb-3">Community Grievance Register</h3>
+  <h2 class="text-center">GRIEVANCE REGISTER</h2>
+  <p class="text-center text-muted">
+    This tracker is managed by the Communications Manager
+  </p>
 
-  <a href="form.html" class="btn btn-primary mb-3">+ New Grievance</a>
+  <div class="mb-3">
+    <a href="form.html" class="btn btn-primary">+ New Grievance</a>
+    <a href="policy.html" class="btn btn-outline-secondary">How to use this register</a>
+  </div>
 
-  <table class="table table-bordered table-striped">
+  <table class="table table-bordered table-striped small">
     <thead class="table-dark">
       <tr>
-        <th>Date</th>
-        <th>Community</th>
-        <th>LLG</th>
-        <th>Complainant</th>
-        <th>Severity</th>
+        <th>No</th>
+        <th>Date Raised</th>
+        <th>Receiver</th>
+        <th>Channel</th>
+        <th>Location</th>
+        <th>Category</th>
+        <th>Criticality</th>
         <th>Status</th>
         <th>Action</th>
       </tr>
     </thead>
-    <tbody id="grievanceTable"></tbody>
+    <tbody id="tableBody"></tbody>
   </table>
 </div>
 
