@@ -1,53 +1,53 @@
-let grievances = JSON.parse(localStorage.getItem("grievances")) || [];
+let data = JSON.parse(localStorage.getItem("grievances")) || [];
 
-document.getElementById("grievanceForm")?.addEventListener("submit", function(e){
+document.getElementById("grievanceForm")?.addEventListener("submit", e => {
   e.preventDefault();
 
-  const grievance = {
-    id: Date.now(),
-    date: date_reported.value,
-    community: community.value,
-    llg: llg.value,
-    complainant: complainant_name.value,
-    contact: contact_details.value,
+  data.push({
+    id: data.length + 1,
+    date: date.value,
     receiver: receiver.value,
+    channel: channel.value,
+    location: location.value,
     description: description.value,
-    source: source.value,
-    severity: severity.value,
+    category: category.value,
+    criticality: criticality.value,
+    assigned: assigned.value,
+    update: update.value,
     status: status.value
-  };
+  });
 
-  grievances.push(grievance);
-  localStorage.setItem("grievances", JSON.stringify(grievances));
+  localStorage.setItem("grievances", JSON.stringify(data));
   window.location.href = "index.html";
 });
 
-function loadGrievances(){
-  const table = document.getElementById("grievanceTable");
-  if(!table) return;
+function loadTable() {
+  const body = document.getElementById("tableBody");
+  if (!body) return;
 
-  table.innerHTML = "";
-  grievances.forEach((g, i) => {
-    table.innerHTML += `
+  body.innerHTML = "";
+  data.forEach((g, i) => {
+    body.innerHTML += `
       <tr>
+        <td>${i + 1}</td>
         <td>${g.date}</td>
-        <td>${g.community}</td>
-        <td>${g.llg}</td>
-        <td>${g.complainant}</td>
-        <td>${g.severity}</td>
+        <td>${g.receiver}</td>
+        <td>${g.channel}</td>
+        <td>${g.location}</td>
+        <td>${g.category}</td>
+        <td>${g.criticality}</td>
         <td>${g.status}</td>
         <td>
-          <button class="btn btn-sm btn-danger" onclick="deleteGrievance(${i})">Delete</button>
+          <button class="btn btn-sm btn-danger" onclick="remove(${i})">Delete</button>
         </td>
-      </tr>
-    `;
+      </tr>`;
   });
 }
 
-function deleteGrievance(index){
-  grievances.splice(index, 1);
-  localStorage.setItem("grievances", JSON.stringify(grievances));
-  loadGrievances();
+function remove(i) {
+  data.splice(i, 1);
+  localStorage.setItem("grievances", JSON.stringify(data));
+  loadTable();
 }
 
-loadGrievances();
+loadTable();
